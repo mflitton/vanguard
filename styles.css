@@ -228,7 +228,7 @@ h1::before {
     content: "";
     position: absolute;
     top: -1rem;
-    left: -4.75rem;
+    left: -4rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
