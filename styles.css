@@ -82,6 +82,7 @@ h1 {
     color: var(--blue);
     font-weight: bold;
     font-size: 1.75em;
+    margin-left: 2rem;
     justify-self: center;
     align-self: center;
     position: relative;
@@ -217,11 +218,13 @@ input:checked ~ ul {
     color: var(--white);
     background-color: var(--blue);
     z-index: 2;
+    transition: background-color .3s ease-in, transform .3s;
+    transform: scale(1);
 }
 
 .blur-shape {
     width: 80%;
-    height: 220px;
+    height: 240px;
     backdrop-filter: blur(10px);
     position: absolute;
     z-index: 1;
@@ -235,7 +238,7 @@ h1::before {
     content: "";
     position: absolute;
     top: -1rem;
-    left: -4rem;
+    left: -5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
@@ -264,7 +267,7 @@ h1::before {
 #expertise-offer p {
     font-size: 10pt;
     line-height: 1.5;
-    margin: 0 1.25rem;
+    margin: 0 1.75rem;
 }
 
 #offerings {
@@ -275,14 +278,16 @@ h1::before {
 
 #offerings div {
     background-color: var(--blue);
-    margin: 1rem;
+    margin: 1rem 1.5rem;
     border-radius: 10px;
-    padding: 2rem 1rem 1rem 0;
+    padding: 3rem 1rem 3rem 1rem;
     color: var(--white);
+    transition: transform .3s ease-in;
 }
 
 #offerings h3 {
     font-weight: bold;
+    line-height: 1.5;
     font-size: 1em;
     margin: 0 0 1rem 2rem;
 }
@@ -348,11 +353,15 @@ footer h2 {
 footer p {
     font-size: 10pt;
     line-height: 1.5;
-    margin: 0 1.75rem;
+    margin: 0 3rem;
+}
+
+footer a {
+    color: var(--blue);
 }
 
 form {
-    margin: 1.5rem 2rem 2rem 2rem;
+    margin: 1.5rem 2rem 2rem 3rem;
     display: grid;
 }
 
@@ -361,11 +370,16 @@ label {
     margin: 1rem 0 0 0;
 }
 
-footer input[type=text], textarea {
+form input[type=text], textarea {
     background-color: var(--white);
-    margin: 0.25rem 0 0 0;
+    margin: 0.25rem 0 1rem 0;
+    width: 95%;
     height: 40px;
     border: 3px solid var(--blue);
+}
+
+textarea {
+    height: 80px;
 }
 
 input[type=submit] {
@@ -379,8 +393,9 @@ input[type=submit] {
     color: var(--white);
     font-weight: bold;
     font-size: 1.15em;
+    transition: background-color .3s ease-in, transform .3s;
+    transform: scale(1);
 }
-
 
 #info {
     text-align: center;
@@ -432,21 +447,89 @@ input[type=submit] {
     animation: stepUp 1s ease-in-out forwards;
 }
 
-/* MEDIA QUERIES (MEDIUM) */ 
+#innovation-investment button:hover {
+    background-color: var(--red);
+    transform: scale(1.05);
+}
 
-    #results {
+input[type=submit]:hover {
+    background-color: var(--red);
+    transform: scale(1.05);
+}
+
+#offerings div:hover {
+    transform: translateY(-10px);
+}
+
+/* MEDIA QUERIES (MEDIUM) */ 
+@media screen and (min-width: 650px) {
+    .blur-shape {
+        height: 225px;
+        top: 56%;
+    }
+    #offerings {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
+    #both-charts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 100vw;
+        margin-right: 2rem;
+        column-gap: 1rem;
     }
-    .results-table {
-        width: 50%;
+    #profits {
+        width: 45vw;
+        margin-left: 0;
     }
-    .bar-chart {
-        width: 50%;
+    th, td {
+        padding: 1rem 1rem;
     }
-
-
+    #growth {
+        width: 45vw;
+        margin: 0;
+    }
+    form {
+        width: 80vw;
+        margin: 2rem auto;
+    }
+    #contact-writing p {
+        margin-left: 10vw;
+    }
+    #contact-writing h2 {
+        margin-left: 10vw;
+    }
+}
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 975px) {
+
+    .blur-shape {
+        height: 210px;
+    }
+    #offerings {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0 1rem 2rem 1rem;
+    }
+    #offerings div {
+        margin: 0.5rem;
+        justify-self: center;
+        align-items: center;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+    }
+    form input {
+        width: 50vw;
+    }
+
+    #contact-writing p {
+        margin-left: 10vw;
+    }
+    #contact-writing h2 {
+        margin-left: 10vw;
+    }
+
+}
