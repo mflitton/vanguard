@@ -187,26 +187,20 @@ input:checked ~ ul {
     position: relative;
 }
 
-.blur-shape {
-    width: 80%;
-    height: 225px;
-    background-color: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    transform: translate(-50%, -50%);   
-}
-
 #innovation-investment h2 {
     margin-top: 14rem;
+    position: relative;
     padding: 1rem 0;
     color: var(--white);
     font-size: 1.75em;
     font-weight: bold;
+    z-index: 4;
 }
 
 #innovation-investment p {
     padding: 2rem 0;
+    position: relative;
+    z-index: 3;
     width: 80%;
     color: var(--white);
     font-size: 10pt;
@@ -214,6 +208,7 @@ input:checked ~ ul {
 
 #innovation-investment button {
     border: none;
+    position: relative;
     width: 225px;
     height: 60px;
     border-radius: 10px;
@@ -221,6 +216,18 @@ input:checked ~ ul {
     font-weight: bold;
     color: var(--white);
     background-color: var(--blue);
+    z-index: 2;
+}
+
+.blur-shape {
+    width: 80%;
+    height: 220px;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    z-index: 1;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
@@ -283,7 +290,7 @@ h1::before {
 #proven-results {
     background-color: var(--blue);
     color: var(--white);
-    padding: 1.5rem 0 2.5rem 0;
+    padding: 1.5rem 1rem 2.5rem 1rem;
 }
 
 #proven-results h2, #proven-results h3 {
@@ -380,10 +387,6 @@ input[type=submit] {
     padding: 0 0 3rem 0;
 }
 
-
-
-
-
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -428,7 +431,6 @@ input[type=submit] {
 .bar {
     animation: stepUp 1s ease-in-out forwards;
 }
-
 
 /* MEDIA QUERIES (MEDIUM) */ 
 
